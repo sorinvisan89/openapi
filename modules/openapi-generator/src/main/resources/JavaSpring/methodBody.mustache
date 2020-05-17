@@ -30,23 +30,5 @@ return {{#jdk8}}{{#async}}CompletableFuture.completedFuture({{/async}}{{/jdk8}}n
 {{/examples}}
 {{/reactive}}
 {{#reactive}}
-Mono<Void> result = Mono.empty();
-    {{#examples}}
-        {{#-first}}
-        exchange.getResponse().setStatusCode({{#returnSuccessCode}}HttpStatus.valueOf({{{statusCode}}}){{/returnSuccessCode}}{{^returnSuccessCode}}HttpStatus.NOT_IMPLEMENTED{{/returnSuccessCode}});
-        for (MediaType mediaType : exchange.getRequest().getHeaders().getAccept()) {
-        {{/-first}}
-            if (mediaType.isCompatibleWith(MediaType.valueOf("{{{contentType}}}"))) {
-                String exampleString = {{>exampleString}};
-                result = ApiUtil.getExampleResponse(exchange, exampleString);
-                break;
-            }
-        {{#-last}}
-        }
-        {{/-last}}
-    {{/examples}}
-{{^examples}}
-        exchange.getResponse().setStatusCode({{#returnSuccessCode}}HttpStatus.OK{{/returnSuccessCode}}{{^returnSuccessCode}}HttpStatus.NOT_IMPLEMENTED{{/returnSuccessCode}});
-{{/examples}}
-        return result.then(Mono.empty());
+        return Mono.just(new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED));
 {{/reactive}}
