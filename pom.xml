@@ -5,7 +5,7 @@
         <version>5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.openapitools</groupId>
+    <groupId>com.sorin.openapitools</groupId>
     <artifactId>openapi-generator-project</artifactId>
     <packaging>pom</packaging>
     <name>openapi-generator-project</name>
@@ -1594,6 +1594,10 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+            <repository>
+                <id>jitpack.io</id>
+                <url>https://jitpack.io</url>
+            </repository>
     </repositories>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -1623,4 +1627,5 @@
         <checkstyle.plugin.version>3.1.0</checkstyle.plugin.version>
         <git.commit.id.plugin.version>4.0.0</git.commit.id.plugin.version>
     </properties>
+
 </project>
