@@ -4,9 +4,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>openapi-generator-project</artifactId>
-    <groupId>com.github.sorinvisan89</groupId>
+    <groupId>com.adswizz</groupId>
     <!-- RELEASE_VERSION -->
-    <version>5.0.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <!-- /RELEASE_VERSION -->
     <relativePath>../..</relativePath>
   </parent>

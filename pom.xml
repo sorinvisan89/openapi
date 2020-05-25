@@ -5,12 +5,12 @@
         <version>5</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.sorinvisan89</groupId>
+    <groupId>com.adswizz</groupId>
     <artifactId>openapi-generator-project</artifactId>
     <packaging>pom</packaging>
     <name>openapi-generator-project</name>
     <!-- RELEASE_VERSION -->
-    <version>5.0.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <!-- /RELEASE_VERSION -->
     <url>https://github.com/openapitools/openapi-generator</url>
     <scm>
@@ -60,14 +60,16 @@
         <url>https://github.com/openapitools/openapi-generator/issues</url>
     </issueManagement>
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <id>nexus.adswizz.com_releases</id>
+            <name>Releases</name>
+            <url>https://nexus.adswizz.com/content/repositories/releases</url>
         </repository>
+        <snapshotRepository>
+            <id>nexus.adswizz.com_snapshots</id>
+            <name>Snapshots</name>
+            <url>https://nexus.adswizz.com/content/repositories/snapshots</url>
+        </snapshotRepository>
     </distributionManagement>
     <licenses>
         <license>
@@ -344,7 +346,7 @@
                                     <message>No Snapshots Allowed!</message>
                                     <failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
                                     <excludes>
-                                        <exclude>org.openapitools:*</exclude>
+                                        <exclude>com.adswizz:*</exclude>
                                     </excludes>
                                 </requireReleaseDeps>
                             </rules>
@@ -1588,16 +1590,11 @@
     </dependencyManagement>
     <repositories>
         <repository>
-            <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>nexus.adswizz.com_snapshots</id>
+            <name>Snapshots</name>
+            <url>https://nexus.adswizz.com/content/repositories/snapshots</url>
+            <snapshots><enabled>true</enabled></snapshots>
         </repository>
-            <repository>
-                <id>jitpack.io</id>
-                <url>https://jitpack.io</url>
-            </repository>
     </repositories>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

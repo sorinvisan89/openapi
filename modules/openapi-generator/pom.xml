@@ -1,10 +1,10 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <parent>
-        <groupId>com.github.sorinvisan89</groupId>
+        <groupId>com.adswizz</groupId>
         <artifactId>openapi-generator-project</artifactId>
         <!-- RELEASE_VERSION -->
-        <version>5.0.0-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
         <!-- /RELEASE_VERSION -->
         <relativePath>../..</relativePath>
     </parent>
@@ -389,7 +389,7 @@
             <version>${jackson-threetenbp-version}</version>
         </dependency>
         <dependency>
-            <groupId>org.openapitools</groupId>
+            <groupId>com.adswizz</groupId>
             <artifactId>openapi-generator-core</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
@@ -430,11 +430,10 @@
     </dependencies>
     <repositories>
         <repository>
-            <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
+            <id>nexus.adswizz.com_snapshots</id>
+            <name>Snapshots</name>
+            <url>https://nexus.adswizz.com/content/repositories/snapshots</url>
+            <snapshots><enabled>true</enabled></snapshots>
         </repository>
     </repositories>
 </project>
